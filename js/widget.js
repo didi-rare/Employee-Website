@@ -21,7 +21,6 @@ emplxhr.send();
 
 var statusxhr = new XMLHttpRequest();
 statusxhr.onreadystatechange = function () {
-    console.log(statusxhr.responseText);
     if (statusxhr.readyState === 4){
         var stat = JSON.parse(statusxhr.responseText);
         var StatusHTML = '<ul class="rooms">';
@@ -37,7 +36,6 @@ statusxhr.onreadystatechange = function () {
         StatusHTML +='</ul>';
         document.getElementById('roomList').innerHTML = StatusHTML;
     }
-
 };
-statusxhr.open('Get', 'data/room.json');
+statusxhr.open('GET', 'data/rooms.json');
 statusxhr.send();
