@@ -15,9 +15,8 @@ $(document).ready(function () {
         $('#employeeList').html(StatusHTML);
     });//end of json
 
-    var url_room = "data/rooms.json";
+    var url_room = "/data/rooms.json";
     $.getJSON(url_room, function (response) {
-        console.log(response);
         var StatusHTML = '<ul class="rooms">';
         $.each(response, function (index, room) {
             if (room.available === true){
@@ -29,6 +28,9 @@ $(document).ready(function () {
         });//end of each
         StatusHTML += '</ul>';
         $('#roomList').html(StatusHTML);
-    });//end of json
+    })//end of json
+    .fail(function (jqXhr) {
+        $('#roomList').html('<p> sorry! ' + jqXhr.statusText + ' error.</p>');
+    });
 
 });//end of ready
