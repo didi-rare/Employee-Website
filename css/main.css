@@ -377,6 +377,12 @@ ul.bulleted .out:before {
   background-color: #ed5a5a;
 }
 
+button.load {
+  color: #d64439;
+  background-color: #1918ff;
+  border: solid 1px #212402;
+}
+
 footer p {
   color: #b2bac2;
   font-size: 1.15em;
